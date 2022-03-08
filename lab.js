@@ -26,39 +26,51 @@ let dog = {
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-console.log(dog.name)
-
-
+// console.log(dog.name)
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
-
+// console.log(dog['color'])
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
-  Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday.
-  Have the values to those keys be strings that are equal to your favorite thing in that category.
+  Make a 'favoriteThings' object that contains the following keys: band, food, 
+  person, book, movie, holiday.
+  Have the values to those keys be strings that are equal to your favorite 
+  thing in that category.
 */
 
-//Code here
+let favoriteThings = {
+  band: 'AJR',
+  food: 'Waffles',
+  person: 'Keanu Reeves',
+  book: 'The Hobbit',
+  movie: 'The Last Jedi',
+  holiday: 'halloween'
+}
 
 
 /*
-  After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
+  After you've made your object, use bracket or dot notation to add another
+   key named 'car' with the value being your favorite car and then another
+    key named 'show' with the value being your favorite show.
 */
 
-//Code here
-
+favoriteThings.car = 'Honda Civic'
+favoriteThings.show = 'Ted Lasso'
 
 /*
-  Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
-  and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
+  Now use bracket or dot notation to change the value of the food
+   key in your favoriteThings object to be 'Chicken Nuggets'
+  and change the value of the book key in your favoriteThings 
+  object to be 'Harry Potter'. (If they were either of those things already,
+     change them to something else.)
 */
 
-//Code here
+favoriteThings.food = 'Chicken Nuggets'
+favoriteThings.book = 'Harry Potter'
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -73,12 +85,11 @@ var carDetails = {
 // Do not edit the code above.
 
 /*
-  Use object destructuring to save the property values from the object carDetails into new variables. 
+  Use object destructuring to save the property values from the object
+   carDetails into new variables. 
 */
 
-//Code Here
-
-
+// const {color, make, model, year} = car
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -89,14 +100,13 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
-  
+  const {firstName, lastName, title} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
 
-
+// console.log(greeting)
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -108,9 +118,12 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+// function totalPopulation(object) {
+//   const{utah, california, texas, arizona} = object
+//   return (utah + california + texas + arizona)
+// }
 
-
+// console.log(totalPopulation())
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -122,7 +135,10 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+// function ingredients(obje){
+//   const {carb, fat, protein} = obje
+//   return[carb, fat, protein]
+// }
 
 
 
@@ -144,37 +160,58 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
-
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
-
+delete(user.age)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
-  Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
-  Outside of your class, create an instance of your cat, passing in whatever values you would like.
+  Create a class called 'Cat'. Make sure to call your constructor, 
+  and require these 3 parameters: name, age, color.
+  Outside of your class, create an instance of your cat, 
+  passing in whatever values you would like.
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
-
-
+class Cat {
+  constructor(name, age, color) {
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
+const jeff = new Cat ('Jeff', 8, 'grey')
+// console.log(jeff.name)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
-  Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
-  Add a function to your Wizard class called castSpell. This function should print "{name} has cast {favoriteSpell}"
-  Outside of your class, create an instance of your Wizard, passing in whatever values you would like.
+  Create a class called 'Wizard'. Make sure to call your constructor, and 
+  require these 3 parameters: name, age, favoriteSpell.
+  Add a function to your Wizard class called castSpell. This function 
+  should print "{name} has cast {favoriteSpell}"
+  Outside of your class, create an instance of your Wizard, passing 
+  in whatever values you would like.
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+  constructor (name, age, favoriteSpell) {
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  } 
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}.`)
+  }
+}
+const gandalf = new Wizard ('Gandalf', 2019, 'dragon firework')
+gandalf.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
