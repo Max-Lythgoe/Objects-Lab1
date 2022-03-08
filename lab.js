@@ -211,14 +211,15 @@ class Wizard {
   }
 }
 const gandalf = new Wizard ('Gandalf', 2019, 'dragon firework')
-gandalf.castSpell()
+// gandalf.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
     phone objects to keep track of inventory using an app.
 
-    Phone will build phone objects with brand, model, storage, color, price, and sold properties.
+    Phone will build phone objects with brand, model, storage, color, price, 
+    and sold properties.
 
     Write a constructor that sets those values -- all of the values 
     should come from the constructors parameters except sold, which
@@ -227,7 +228,8 @@ gandalf.castSpell()
     and it won't be sold yet. 
 
     Create a method called 'sell'.
-    sell should be a function that changes the value of sold to true and prints the string: '{brand} {model} has been sold.'
+    sell should be a function that changes the value of sold to true 
+    and prints the string: '{brand} {model} has been sold.'
     
     Create another method called 'changePrice'. We can use this 
     to change the price in case a phone isn't selling.
@@ -236,7 +238,23 @@ gandalf.castSpell()
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+  constructor (brand, model, storage, color, price) {
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false
+  } 
+  sell() {
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice
+  }
+}
 
   
 /*
@@ -249,7 +267,9 @@ gandalf.castSpell()
     - price: number
 */
 
-//Code Here
+const iPhone = new Phone('Apple', '13 Pro', 128, 'Graphite Grey', 999)
+const galaxy = new Phone('Samsung', 'Galaxy S22 Ultra', 128, 'Phantom Black', 1199)
+const pixel = new Phone('Google', 'Pixel 6 Pro', 128, 'Stormy Black', 899)
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -258,24 +278,28 @@ gandalf.castSpell()
   Then console.log that object to see the price change
 */ 
 
-//Code Here 
-
+// galaxy.changePrice(900)
+// console.log(galaxy)
 
 /*
   Now call the sell method on one of your other phone objects
 
-  Print the value of that phone's sell property to make sure it's been changed to true
+  Print the value of that phone's sell property to make sure it's 
+  been changed to true
 */
 
-//Code Here 
-
+// galaxy.sell()
+// console.log(galaxy.sold)
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
 /*
   Use the spread operator to create a copy of the colors object below.
   Store the copy in a variable called colorsCopy.
-  Note: We did not cover the spread operator in class. We do not expect you to know how to use it. Challenge yourself by going online and researching what the spread operator is and how to use it.
+  Note: We did not cover the spread operator in class. 
+  We do not expect you to know how to use it. 
+  Challenge yourself by going online and researching what the spread 
+  operator is and how to use it.
 */
 
 //do not edit this object
@@ -286,8 +310,7 @@ const colors = {
 }
 //do not edit this object
 
-//Code Here 
-
+var colorCopy = { ...colors};
 
 
 /*
@@ -314,11 +337,12 @@ const shippingInfo = {
 }
 //do not edit the objects above
 
-//Code Here
+const helensInfo = { ...shippingInfo, ...contactInfo}
 
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
+// console.log(helensInfo)
 
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
@@ -332,14 +356,26 @@ const shippingInfo = {
   And finally, print the value of the mileage.
 */
 
-//Code Here 
+class Vehicle {
+  constructor (capacity, color, mileage) {
+    this.capacity = capacity
+    this.color = color
+    this.mileage = mileage
+  } 
+  move(miles) {
+    this.mileage += miles
+    console.log(`${this.mileage}`)
+  }
+}
 
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
-//Code Here
+myFirstVehicle = new Vehicle (5, 'silver', 193000)
+
+myFirstVehicle.move(20)
 
 
 /* 
