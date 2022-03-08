@@ -375,7 +375,7 @@ class Vehicle {
 
 myFirstVehicle = new Vehicle (5, 'silver', 193000)
 
-myFirstVehicle.move(20)
+// myFirstVehicle.move(20)
 
 
 /* 
@@ -386,17 +386,27 @@ myFirstVehicle.move(20)
   new ones: make and isCool. (Hint: don't forget to call the super function)
 */
 
-//Code Here
+class Motorcycle extends Vehicle {
+  constructor (capacity, color, mileage, make, isCool)  {
+  super (capacity, color, mileage)
+
+  this.make = make
+  this.isCool = isCool
+  }
+}
 
 /*
-  Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
+  Create a Motorcycle using your new class and save it to a variable
+   called myFirstMotorcycle
 */
 
-//Code Here 
+myFirstMotorcycle = new Motorcycle (1, 'black', 98000, 'Harley Davidson', true)
 
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
+
+// myFirstMotorcycle.move(35)
 
 /*
   Let's make another class based off of Vehicle. 
@@ -414,7 +424,25 @@ myFirstVehicle.move(20)
   This function should set isSeaworthy to be true
 */
 
-//Code Here
+class Boat extends Vehicle {
+  constructor (capacity, color, mileage, name, type, isSeaworthy)  {
+  super (capacity, color, mileage)
+
+  this.name = name
+  this.type = type
+  this.isSeaworthy = isSeaworthy
+  }
+  checkSeaworthiness() {
+    if (this.isSeaworthy) {
+    console.log(`The ${this.color}, ${this.type}, ${this.name} is seaworthy!`)
+    } else {
+      console.log(`You need to get your ${this.type} in shape!`)
+    }
+  } 
+  preformMaintenance() {
+    this.isSeaworthy = true
+  }
+}
 
 
 /*
@@ -422,22 +450,22 @@ myFirstVehicle.move(20)
   properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
 */
 
-//Code Here
+myFirstBoat = new Boat (6, 'red and white', 200, 'Boaty McBoatFace', 'Autosub Long Range', false)
 
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
-//Code Here
+myFirstBoat.checkSeaworthiness()
 
 /*
   Now run the performMaintenance method on your boat
 */
 
-//Code Here 
+myFirstBoat.preformMaintenance()
 
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
-//Code Here
+myFirstBoat.checkSeaworthiness()
